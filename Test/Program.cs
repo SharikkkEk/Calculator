@@ -12,6 +12,13 @@ namespace Test
             numberOne.numberByOrder = 1;
             numberOne.count = numberOne.entry();
 
+            Number numberTwo = new Number();
+
+            numberTwo.numberByOrder = 2;
+            numberTwo.count = numberTwo.entry();
+
+            Number.operations(numberOne.count, numberTwo.count);
+
             Console.ReadLine();
         }
     }
@@ -25,6 +32,7 @@ namespace Test
         public int entry()
         {
             Console.WriteLine($"Введите {numberByOrder} число");
+
             while (true)
             {
                 if (int.TryParse(Console.ReadLine(), out count) == false)
@@ -36,6 +44,38 @@ namespace Test
                 {
                     return count;
                 }
+            }
+        }
+
+        public static void operations(int numberOne, int numberTwo)
+        {
+            Console.WriteLine("Введите символ операции");
+            string symbolOperation = Console.ReadLine();
+
+            while (true)
+            {
+                switch (symbolOperation)
+                {
+                    case "^":
+                        Console.WriteLine(numberOne ^ numberTwo);
+                        break;
+                    case ":":
+                        Console.WriteLine(numberOne / numberTwo);
+                        break;
+                    case "*":
+                        Console.WriteLine(numberOne * numberTwo);
+                        break;
+                    case "-":
+                        Console.WriteLine(numberOne - numberTwo);
+                        break;
+                    case "+":
+                        Console.WriteLine(numberOne + numberTwo);
+                        break;
+                    default:
+                        Console.WriteLine("Я знаю лишь операции: '^'; ':'; '*'; ; '-'; '+' ");
+                        continue;
+                }
+                break;
             }
         }
     }
