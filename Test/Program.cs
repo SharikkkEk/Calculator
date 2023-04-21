@@ -32,7 +32,7 @@ namespace Test
                     case 'n':
                         return;
                     default:
-                        Console.WriteLine("Я таких кнопок не знаю, так что продолжаю\n");
+                        Console.WriteLine("\nЯ таких кнопок не знаю, так что продолжаю\n");
                         break;
                 }
             }
