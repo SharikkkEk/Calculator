@@ -25,7 +25,6 @@ namespace Test
         public int entry()
         {
             Console.WriteLine($"Введите {numberByOrder} число");
-
             while (true)
             {
                 if (int.TryParse(Console.ReadLine(), out count) == false)
