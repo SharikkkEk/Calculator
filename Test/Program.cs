@@ -7,19 +7,35 @@ namespace Test
     {
         static void Main(string[] args)
         {
-            Number numberOne = new Number();
+            while (true)
+            {
+                Number numberOne = new Number();
 
-            numberOne.numberByOrder = 1;
-            numberOne.count = numberOne.entry();
+                numberOne.numberByOrder = 1;
+                numberOne.count = numberOne.entry();
 
-            Number numberTwo = new Number();
+                Number numberTwo = new Number();
 
-            numberTwo.numberByOrder = 2;
-            numberTwo.count = numberTwo.entry();
+                numberTwo.numberByOrder = 2;
+                numberTwo.count = numberTwo.entry();
 
-            Number.operations(numberOne.count, numberTwo.count);
+                Number.operations(numberOne.count, numberTwo.count);
 
-            Console.ReadLine();
+                Console.WriteLine("Продолжить вычисления?\nY - да\nN - нет");
+
+                ConsoleKeyInfo choice = Console.ReadKey();
+                switch (choice.KeyChar)
+                {
+                    case 'y':
+                        Console.WriteLine("\n");
+                        break;
+                    case 'n':
+                        return;
+                    default:
+                        Console.WriteLine("Я таких кнопок не знаю, так что продолжаю\n");
+                        break;
+                }
+            }
         }
     }
     
@@ -49,11 +65,11 @@ namespace Test
 
         public static void operations(int numberOne, int numberTwo)
         {
-            Console.WriteLine("Введите символ операции");
-            string symbolOperation = Console.ReadLine();
-
             while (true)
             {
+                Console.WriteLine("Введите символ операции");
+                string symbolOperation = Console.ReadLine();
+
                 switch (symbolOperation)
                 {
                     case "^":
